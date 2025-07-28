@@ -1,12 +1,23 @@
-export default function Home() {
+"use server";
+
+import Link from "next/link";
+
+export default async function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1 className="text-4xl font-bold text-center">Bienvenido a jung-ai</h1>
-      <p className="text-lg text-center max-w-2xl">
-        Explora la interpretación simbólica del tarot a través de la lente de la
-        psicología junguiana, utilizando inteligencia artificial para guiarte en
-        tu viaje interior.
+    <section className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-6">
+      <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+        Bienvenido a <span className="text-primary">jung-ai</span>
+      </h2>
+      <p className="text-neutral-400 max-w-xl">
+        Explora tu inconsciente a través de arquetipos junguianos y el
+        simbolismo del tarot, guiado por una inteligencia artificial.
       </p>
-    </div>
+      <Link
+        href="/tarot"
+        className="bg-primary hover:bg-purple-800 text-white px-6 py-3 rounded-2xl text-lg font-semibold transition"
+      >
+        Comenzar tirada
+      </Link>
+    </section>
   );
 }

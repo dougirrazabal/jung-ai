@@ -2,6 +2,8 @@
 
 import { useContext } from "react";
 import { TarotContext } from "@/context/TarotContext";
+import { tarotDeck } from "@/lib/tarotData";
+import Card from "./Card";
 
 export default function TarotBoard() {
   const { selectedCards, positions, interpretation, setInterpretation } =
@@ -9,6 +11,12 @@ export default function TarotBoard() {
 
   return (
     <div className="space-y-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-h-[60vh] overflow-y-auto border p-4 rounded-xl">
+        {tarotDeck.map((card) => (
+          <Card key={card.number} card={card} />
+        ))}
+      </div>
+
       <div className="grid grid-cols-3 gap-4">
         {positions.map((position) => (
           <div

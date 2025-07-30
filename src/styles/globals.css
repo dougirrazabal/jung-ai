@@ -1,13 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Estilos globales opcionales */
-html,
-body {
-  @apply font-sans text-gray-900 bg-white antialiased;
-}
-
-* {
-  @apply box-border;
-}

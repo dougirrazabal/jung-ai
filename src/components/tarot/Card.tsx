@@ -21,7 +21,7 @@ export default function Card({ card }: Props) {
       <div className="text-center text-sm text-neutral-300">
         <div className="font-semibold">{card.name}</div>
         <div className="text-xs text-neutral-500">
-          {card.number} • {card.hebrewLetter}
+          {card.number} • {card.hebrew}
         </div>
       </div>
     </div>

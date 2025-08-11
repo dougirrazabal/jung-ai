@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
+import Link from "next/link";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,20 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body
         className={`${inter.className} bg-neutral-950 text-neutral-100 min-h-screen`}
       >
-        <header className="w-full border-b border-neutral-800 p-4">
-          <div className="max-w-5xl mx-auto flex items-center justify-between">
-            <h1 className="text-xl font-bold tracking-wide">jung-ai</h1>
-            {/* Espacio para agregar navegación o modo oscuro en el futuro */}
-          </div>
+        <header className="p-4 bg-white shadow">
+          <nav className="flex gap-4">
+            <Link href="/">Home</Link>
+            <Link href="/draw">Draw</Link>
+          </nav>
         </header>
-        <main className="max-w-5xl mx-auto p-4">{children}</main>
-        <footer className="text-sm text-neutral-500 text-center py-6">
-          © {new Date().getFullYear()} jung-ai — Explorando el inconsciente
-        </footer>
+        <main className="p-4">{children}</main>
       </body>
     </html>
   );
